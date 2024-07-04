@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "accuknox-dev"
+  cluster:
+    server: "https://rancher.accuknox.com/k8s/clusters/c-m-ggr4dfpb"
+
+users:
+- name: "accuknox-dev"
+  user:
+    token: "kubeconfig-u-r6gqhinkr5pftrc:lbtc6trvc5rzckld4kgh8hsvjxcqx7wcxqgbkrbzhzqbvkt4z884kv"
+
+
+contexts:
+- name: "accuknox-dev"
+  context:
+    user: "accuknox-dev"
+    cluster: "accuknox-dev"
+
+current-context: "accuknox-dev"
+
