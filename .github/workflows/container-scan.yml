@@ -1,0 +1,20 @@
+#Manual AccuKnox Container Scan.
+name: AccuKnox Scan Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  accuknox-cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+     
+      - name: Run AccuKnox CSPM Scan
+        uses: accuknox/container-scan-action@v0.0.1
+        with:
+          token: ${{ secrets.TOKEN }} 
+          tenant_id: ${{ secrets.TENANT_ID }}
+          tag: "testping1"
+          repository_name: ${{ github.repository }}
